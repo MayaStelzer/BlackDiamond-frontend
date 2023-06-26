@@ -3,7 +3,7 @@ export type CardProps = {
     title: string;
     createDate: string;
     content: string;
-}
+}   
 
 const Card = ({imageUrl, title, createDate, content}: CardProps) => {
     return (
@@ -14,7 +14,7 @@ const Card = ({imageUrl, title, createDate, content}: CardProps) => {
                             <a href="article.html">{title}</a>
                         </h3>
                         <div className="category category ent">{createDate}</div>
-                        <p>{content}</p>
+                        <p>{content.substring(0,300)}...</p>
                     </div>
                 </article>
     )
