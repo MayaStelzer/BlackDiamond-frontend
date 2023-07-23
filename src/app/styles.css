@@ -7,10 +7,10 @@
 }
 body {
     font-family: 'Jost', sans-serif;
-    background: #fff;
+    background: #dbdbe5;
     color: #333;
     line-height: 1.6;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 ul {
@@ -20,11 +20,13 @@ ul {
 a {
     color: #333;
     text-decoration: none;
+    font-size: 20px;
 }
 
 h1, h2 {
     font-weight: 300;
     line-height: 1.2;
+    font-size: 26px;
 }
 
 p {
@@ -110,9 +112,12 @@ img {
 }
 
 .card {
-    background: white;
+    background: #ffffff;
     padding: 10px;
     border: #353535 2px solid;
+    border-radius: 18px;
+    box-shadow: 2px 3px 3px #5f6350;
+    position: relative;
 }
 
 #home-articles .articles-container {
