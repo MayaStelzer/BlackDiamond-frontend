@@ -5,10 +5,10 @@ on:
       - DEVELOP
 env:
   DEVOPS_REPO_BRANCH: DEVELOP
-  DEVOPS_REPO_PATH: bipperFrontEnd
+  DEVOPS_REPO_PATH: skiResortsFrontEnd
   DEVOPS_REPO_NAME: peterstelzer/bipper-kubernetes
   VALUES_FILENAME: values-dev.yaml
-  ACR_REPO: website-frontend
+  ACR_REPO: ski-resorts-front-end
 jobs:
   build:
     runs-on: ubuntu-latest
