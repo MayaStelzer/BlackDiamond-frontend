@@ -127,10 +127,18 @@ img {
     background: #ffffff;
     padding: 10px;
     border: #0c0b08bf 2px solid;
-    border-radius: 18px;
+    border-radius: 5px;
     box-shadow: 2px 3px 3px #5f6350;
     position: relative;
 }
+
+.readmore {
+    background: #c7370f;
+    color: #f4f2ed;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 
 #home-articles .articles-container {
     display: grid;

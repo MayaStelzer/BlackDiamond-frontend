@@ -14,7 +14,11 @@ const Card = ({imageUrl, title, createDate, content}: CardProps) => {
                             <a href="article.html">{title}</a>
                         </h3>
                         <div className="category category ent">{createDate}</div>
-                        <p>{content.substring(0,300)}...</p>
+                        <p>{content.substring(0,150)}...</p>
+                    </div>
+                    <div className="readmore">
+                        <p> <center> Read more </center></p>
+                        <a href="#home"></a>
                     </div>
                 </article>
     )
