@@ -7,7 +7,7 @@
 }
 body {
     font-family: 'Jost', sans-serif;
-    background: #dbdbe5;
+    background: #f4f2ed;
     color: #333;
     line-height: 1.6;
     font-size: 16px;
@@ -18,7 +18,7 @@ ul {
 }
 
 a {
-    color: #333;
+    color: #0c0b08;
     text-decoration: none;
     font-size: 20px;
 }
@@ -42,31 +42,43 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #333;
-    color: #fff;
-    opacity:   0.8;
+    background-color: #f4f2ed;
+    color: #f4f2ed;
     width: 100%;
     position: fixed;
     top: 0px;
     height: 70px;
     padding: 0 30px;
+}
 
+.navbar ul {
+    display: flex;
+    color: #ffffff
+}
+
+.navbar search {
+    border: #0c0b08bf 2px solid;
+}
+
+.logo {
+    color: #0c0b08bf
 }
 
 .navbar a {
-    color: #fff;
     padding: 10px 20px;
     margin: 0 5px;
 }
 
 .navbar a:hover {
-    border-bottom: #28a745 2px solid;
-
+    border-bottom: #c7370f 2px solid;
 }
 
-.navbar ul {
-    display: flex;
+.funfact {
+    background-color: #659dbd;
+    padding: 10px 150px;
+    color: #f9f8f6
 }
+
 
 /* Header */
 .hero {
@@ -114,7 +126,7 @@ img {
 .card {
     background: #ffffff;
     padding: 10px;
-    border: #353535 2px solid;
+    border: #0c0b08bf 2px solid;
     border-radius: 18px;
     box-shadow: 2px 3px 3px #5f6350;
     position: relative;
