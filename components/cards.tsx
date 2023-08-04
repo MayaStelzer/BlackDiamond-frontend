@@ -1,5 +1,5 @@
 import {Dispatch, SetStateAction} from "react"
-import PageStyleType from "../src/app/page"
+import {PageStyleType} from "../src/app/page"
 
 export type CardProps = {
     id: number;
@@ -8,11 +8,13 @@ export type CardProps = {
     createDate: string;
     content: string;
     setPageStyle: Dispatch<SetStateAction<any>>;
+    setCurrentCardId: Dispatch<SetStateAction<any>>;
 }   
 
-const Card = ({imageUrl, title, createDate, content, setPageStyle}: CardProps) => {
+const Card = ({id, imageUrl, title, createDate, content, setPageStyle, setCurrentCardId}: CardProps) => {
     const setPageType = () => {
         setPageStyle(PageStyleType.ArticleType);
+        setCurrentCardId(id);
     }
 
     return (
@@ -20,7 +22,7 @@ const Card = ({imageUrl, title, createDate, content, setPageStyle}: CardProps) =
                     <img src = {imageUrl} alt=""/>
                     <div>
                         <h3>
-                            <a onClick={setPageType}href="article.html">{title}</a>
+                            <a onClick={setPageType}>{title}</a>
                         </h3>
                         <div className="category category ent">{createDate}</div>
                         <p>{content.substring(0,150)}...</p>

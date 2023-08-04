@@ -2,14 +2,25 @@
 import Card, { CardProps } from '../../components/cards'
 import "./styles.css"
 import {useState, useEffect} from 'react';
+import Article from '../../components/article'
 
 export enum PageStyleType {
-  CardType=0,
-  ArticleType=1
+  CardType, ArticleType
 }
 
+export type Card = {
+  id: number;
+  imageUrl: string;
+  title: string;
+  createDate: string;
+  content: string;
+}   
+
+
 export default function Home() {
-    const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState<Card[]>([]);
+    const [pageStyle, setPageStyle]=useState<PageStyleType>(PageStyleType.CardType);
+    const [currentCardId, setCurrentCardId] = useState<number>(0);
     useEffect(() => {
     const fetchCards = async () => {
     const response = await fetch ("http://ski-resorts-api.bipper.net/blogEntries");
@@ -19,8 +30,7 @@ export default function Home() {
     fetchCards ();
 },[]);
 
-const [pageStyle, setPageStyle]=useState<PageStyleType>();
-const Page=()=>{
+
   return (
     <>
     <header className="hero">
@@ -51,14 +61,17 @@ const Page=()=>{
         </section>
         <section id="home-articles" className="py-2">
             <div className="container">
+            {pageStyle == PageStyleType.ArticleType ? 
+            <Article id ={currentCardId} cards={cards}/>
+            :
             <div className="articles-container">
-                {cards.map((card:CardProps) => (
-                    <Card key={card.id} id={card.id}imageUrl={card.imageUrl} title={card.title} createDate={card.createDate} content={card.content} setPageStyle={setPageStyle}/>
+                {cards.map((card:Card) => (
+                    <Card key={card.id} id={card.id}imageUrl={card.imageUrl} title={card.title} createDate={card.createDate} content={card.content} setPageStyle={setPageStyle} setCurrentCardId={setCurrentCardId}/>
                 ))}
             </div>
+            }
             </div>
         </section>  
       </>
   )
-}
 }

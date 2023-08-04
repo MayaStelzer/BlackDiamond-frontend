@@ -1,15 +1,24 @@
-import {CardProps} from "./cards";
+import {Card} from '../src/app/page'
 
-const Article = ({imageUrl, title, createDate, content}: CardProps) => {
+export type ArticleProps = {
+    id: number;
+    cards: Card[];
+}
+
+const Article = ({id, cards}: ArticleProps) => {
+    function matchesId (element: { id: number; }, index: any, array: any){
+        return id==element.id;
+    }
+    const currentCard=cards.filter(matchesId)[0];
     return (
         <article className="article">
-                    <img src = {imageUrl} alt=""/>
+                    <img src = {currentCard.imageUrl} alt=""/>
                     <div>
                         <h3>
-                            <div> {title} </div>
+                            <div> {currentCard.title} </div>
                         </h3>
-                        <div className="category category ent">{createDate}</div>
-                        <p> {content} </p>
+                        <div className="category category ent">{currentCard.createDate}</div>
+                        <p> {currentCard.content} </p>
                     </div>
                 </article>
     )
