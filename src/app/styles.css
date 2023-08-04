@@ -119,13 +119,13 @@ img {
 .container {
     max-width: 1100px;
     margin: auto;
-    padding:  2rem;
+    padding: 2rem;
     overflow: hidden;
 }
 
 .card {
     background: #ffffff;
-    padding: 10px;
+    padding: 15px;
     border: #0c0b08bf 2px solid;
     border-radius: 5px;
     box-shadow: 2px 3px 3px #5f6350;
