@@ -61,7 +61,8 @@ img {
 }
 
 .logo {
-    color: #0c0b08bf
+    color: #0c0b08bf;
+    cursor: pointer;
 }
 
 .navbar a {
@@ -134,10 +135,25 @@ img {
 
 .readmore {
     background: #c7370f;
-    color: #f4f2ed;
+    border: #c7370f 1px solid;
     border-radius: 5px;
     cursor: pointer;
 }
+
+.readmore:hover {
+    background: #f4f2ed;
+    border: #c7370f 1px solid;
+    color: #c7370f;
+}
+
+.readmore a {
+    color: #f4f2ed;
+}
+
+.readmore a:hover {
+    color: #c7370f;
+}
+
 
 
 #home-articles .articles-container {

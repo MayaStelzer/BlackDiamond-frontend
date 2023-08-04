@@ -30,13 +30,15 @@ export default function Home() {
     fetchCards ();
 },[]);
 
-
+const setPageType = () => {
+  setPageStyle(PageStyleType.CardType);
+}
   return (
     <>
     <header className="hero">
             <div id="navbar" className="navbar">
                <h1 className="logo">
-                   <span className="text-primary">Gnar</span>Guide
+               <span className="text-primary" onClick={setPageType}>GnarGuide</span>
                </h1>
                <nav>
                    <ul>

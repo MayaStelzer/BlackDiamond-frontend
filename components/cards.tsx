@@ -22,13 +22,13 @@ const Card = ({id, imageUrl, title, createDate, content, setPageStyle, setCurren
                     <img src = {imageUrl} alt=""/>
                     <div>
                         <h3>
-                            <a onClick={setPageType}>{title}</a>
+                            <a>{title}</a>
                         </h3>
                         <div className="category category ent">{createDate}</div>
-                        <p>{content.substring(0,150)}...</p>
+                        <p>{content.substring(0,200)}...</p>
                     </div>
                     <div className="readmore">
-                        <p> <a href="article.html"> <center> Read more </center> </a> </p>
+                        <h4> <a onClick={setPageType}> <center> Read more </center> </a> </h4>
                     </div>
                 </article>
     )
