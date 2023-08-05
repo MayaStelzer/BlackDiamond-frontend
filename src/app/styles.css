@@ -77,9 +77,14 @@ img {
 .funfact {
     background-color: #659dbd;
     padding: 10px 150px;
-    color: #f9f8f6
+    color: #f9f8f6;
 }
 
+.footer {
+    background-color: #0c0b08bf;
+    padding: 30px 150px;
+    color: #f9f8f6;
+}
 
 /* Header */
 .hero {
@@ -153,8 +158,6 @@ img {
 .readmore a:hover {
     color: #c7370f;
 }
-
-
 
 #home-articles .articles-container {
     display: grid;
