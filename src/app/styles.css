@@ -61,7 +61,8 @@ img {
 }
 
 .logo {
-    color: #0c0b08bf
+    color: #0c0b08bf;
+    cursor: pointer;
 }
 
 .navbar a {
@@ -76,9 +77,14 @@ img {
 .funfact {
     background-color: #659dbd;
     padding: 10px 150px;
-    color: #f9f8f6
+    color: #f9f8f6;
 }
 
+.footer {
+    background-color: #0c0b08bf;
+    padding: 30px 150px;
+    color: #f9f8f6;
+}
 
 /* Header */
 .hero {
@@ -119,17 +125,38 @@ img {
 .container {
     max-width: 1100px;
     margin: auto;
-    padding:  2rem;
+    padding: 2rem;
     overflow: hidden;
 }
 
 .card {
     background: #ffffff;
-    padding: 10px;
+    padding: 15px;
     border: #0c0b08bf 2px solid;
-    border-radius: 18px;
+    border-radius: 5px;
     box-shadow: 2px 3px 3px #5f6350;
     position: relative;
+}
+
+.readmore {
+    background: #c7370f;
+    border: #c7370f 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.readmore:hover {
+    background: #f4f2ed;
+    border: #c7370f 1px solid;
+    color: #c7370f;
+}
+
+.readmore a {
+    color: #f4f2ed;
+}
+
+.readmore a:hover {
+    color: #c7370f;
 }
 
 #home-articles .articles-container {
