@@ -1,5 +1,4 @@
-import {Dispatch, SetStateAction} from "react"
-import {PageStyleType} from "../src/app/page"
+import Link from "next/link";
 
 export type CardProps = {
     id: number;
@@ -7,15 +6,9 @@ export type CardProps = {
     title: string;
     createDate: string;
     content: string;
-    setPageStyle: Dispatch<SetStateAction<any>>;
-    setCurrentCardId: Dispatch<SetStateAction<any>>;
-}   
+}
 
-const Card = ({id, imageUrl, title, createDate, content, setPageStyle, setCurrentCardId}: CardProps) => {
-    const setPageType = () => {
-        setPageStyle(PageStyleType.ArticleType);
-        setCurrentCardId(id);
-    }
+const Card = ({id, imageUrl, title, createDate, content }: CardProps) => {
 
     return (
         <article className="card">
@@ -28,7 +21,7 @@ const Card = ({id, imageUrl, title, createDate, content, setPageStyle, setCurren
                         <p>{content.substring(0,200)}...</p>
                     </div>
                     <div className="readmore">
-                        <h4> <a onClick={setPageType}> <center> Read more </center> </a> </h4>
+                        <h4> <Link  href={"/blog/" + id}> <center> Read more </center> </Link> </h4>
                     </div>
                 </article>
     )

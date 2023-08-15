@@ -1,44 +1,29 @@
-'use client'
-import Card, { CardProps } from '../../components/cards'
+'use client';
 import "./styles.css"
-import {useState, useEffect} from 'react';
-import Article from '../../components/article'
-
-export enum PageStyleType {
-  CardType, ArticleType
-}
-
-export type Card = {
-  id: number;
-  imageUrl: string;
-  title: string;
-  createDate: string;
-  content: string;
-}   
-
+import {CardType} from "@/model/cardType";
+import {useGlobalContext} from "@/app/context/store";
+import {useEffect} from "react";
+import Card from "../../components/cards";
 
 export default function Home() {
-    const [cards, setCards] = useState<Card[]>([]);
-    const [pageStyle, setPageStyle]=useState<PageStyleType>(PageStyleType.CardType);
-    const [currentCardId, setCurrentCardId] = useState<number>(0);
-    useEffect(() => {
-    const fetchCards = async () => {
-    const response = await fetch ("http://ski-resorts-api.bipper.net/blogEntries");
-    const cards = await response.json();
-    setCards(cards.blogEntries);
-    };
-    fetchCards ();
-},[]);
 
-const setPageType = () => {
-  setPageStyle(PageStyleType.CardType);
-}
-  return (
+    const { cards, setCards } = useGlobalContext();
+
+    useEffect(() => {
+        const fetchCards = async () => {
+            const response = await fetch ("http://ski-resorts-api.bipper.net/blogEntries");
+            const cards = await response.json();
+            setCards(cards.blogEntries);
+        };
+        fetchCards ();
+    },[]);
+
+    return (
     <>
     <header className="hero">
             <div id="navbar" className="navbar">
                <h1 className="logo">
-               <span className="text-primary" onClick={setPageType}>GnarGuide</span>
+               <span className="text-primary">GnarGuide</span>
                </h1>
                <nav>
                    <ul>
@@ -61,15 +46,11 @@ const setPageType = () => {
 
         <section id="home-articles" className="py-2">
             <div className="container">
-            {pageStyle == PageStyleType.ArticleType ? 
-            <Article id ={currentCardId} cards={cards}/>
-            :
             <div className="articles-container">
-                {cards.map((card:Card) => (
-                    <Card key={card.id} id={card.id}imageUrl={card.imageUrl} title={card.title} createDate={card.createDate} content={card.content} setPageStyle={setPageStyle} setCurrentCardId={setCurrentCardId}/>
+                {cards.map((card:CardType) => (
+                    <Card key={card.id} id={card.id} imageUrl={card.imageName} title={card.title} createDate={card.createDate} content={card.content}/>
                 ))}
             </div>
-            }
             </div>
         </section>
          <div id="footer" className="footer">

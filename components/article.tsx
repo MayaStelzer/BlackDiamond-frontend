@@ -1,18 +1,18 @@
-import {Card} from '../src/app/page'
+import {useGlobalContext} from "@/app/context/store";
 
 export type ArticleProps = {
-    id: number;
-    cards: Card[];
+    id: string;
 }
 
-const Article = ({id, cards}: ArticleProps) => {
-    function matchesId (element: { id: number; }, index: any, array: any){
-        return id==element.id;
+const Article = ({ id }: ArticleProps) => {
+    const { cards } = useGlobalContext();
+    function matchesId (element: { id: number; }){
+        return Number(id)==element.id;
     }
     const currentCard=cards.filter(matchesId)[0];
     return (
         <article className="article">
-                    <img src = {currentCard.imageUrl} alt=""/>
+                    <img src = {currentCard.imageName} alt=""/>
                     <div>
                         <h3>
                             <div> {currentCard.title} </div>
