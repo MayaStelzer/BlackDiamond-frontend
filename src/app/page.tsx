@@ -62,7 +62,7 @@ const setPageType = () => {
         <section id="home-articles" className="py-2">
             <div className="container">
             {pageStyle == PageStyleType.ArticleType ? 
-            <Article id ={currentCardId} cards={cards}/>
+            <Article id ={currentCardId} cards={cards} setPageStyle={setPageType}/>
             :
             <div className="articles-container">
                 {cards.map((card:Card) => (
