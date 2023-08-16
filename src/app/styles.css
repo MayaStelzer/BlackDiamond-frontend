@@ -76,7 +76,7 @@ img {
 
 .funfact {
     background-color: #659dbd;
-    padding: 10px 150px;
+    padding: 10px 350px;
     color: #f9f8f6;
 }
 
@@ -136,6 +136,22 @@ img {
     border-radius: 5px;
     box-shadow: 2px 3px 3px #5f6350;
     position: relative;
+}
+
+.backButton {
+    background: #c7370f;
+    border: #c7370f 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px
+}
+.backButton:hover {
+    background: #f4f2ed;
+    border: #c7370f 2px solid;
+    color: #c7370f;
+}
+.backButton button {
+    color: #f4f2ed;
 }
 
 .readmore {
