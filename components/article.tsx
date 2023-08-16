@@ -1,17 +1,14 @@
-import {Card} from '../src/app/page'
-import {Dispatch, SetStateAction} from "react"
-import {PageStyleType} from "../src/app/page"
-
+import {useGlobalContext} from "@/app/context/store";
 
 export type ArticleProps = {
-    id: number;
-    cards: Card[];
-    setPageStyle: Dispatch<SetStateAction<any>>;
+    id: string;
 }
 
-const Article = ({id, cards, setPageStyle}: ArticleProps) => {
-    function matchesId (element: { id: number; }, index: any, array: any){
-        return id==element.id;
+const Article = ({ id }: ArticleProps) => {
+    const { cards } = useGlobalContext();
+    function matchesId (element: { id: number; }){
+        return Number(id)==element.id;
+
     }
     const setPageType = () => {
         setPageStyle(PageStyleType.CardType);
@@ -19,11 +16,11 @@ const Article = ({id, cards, setPageStyle}: ArticleProps) => {
     const currentCard=cards.filter(matchesId)[0];
     return (
         <div>
-            <div className = "backButton">
+            <div className = "back Button">
                 <button onClick={setPageType}>Back</button>
             </div>
         <article className="article">
-                    <img src = {currentCard.imageUrl} alt=""/>
+                    <img src = {currentCard.imageName} alt=""/>
                     <div>
                         <h3>
                             <div> {currentCard.title} </div>
