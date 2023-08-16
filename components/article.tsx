@@ -8,9 +8,17 @@ const Article = ({ id }: ArticleProps) => {
     const { cards } = useGlobalContext();
     function matchesId (element: { id: number; }){
         return Number(id)==element.id;
+
+    }
+    const setPageType = () => {
+        setPageStyle(PageStyleType.CardType);
     }
     const currentCard=cards.filter(matchesId)[0];
     return (
+        <div>
+            <div className = "back Button">
+                <button onClick={setPageType}>Back</button>
+            </div>
         <article className="article">
                     <img src = {currentCard.imageName} alt=""/>
                     <div>
@@ -21,6 +29,7 @@ const Article = ({ id }: ArticleProps) => {
                         <p> {currentCard.content} </p>
                     </div>
                 </article>
+        </div>
     )
 }
 
