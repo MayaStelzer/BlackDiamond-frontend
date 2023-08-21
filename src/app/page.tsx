@@ -23,7 +23,7 @@ export default function Home() {
     <header className="hero">
             <div id="navbar" className="navbar">
                <h1 className="logo">
-               <span className="text-primary">GnarGuide</span>
+               <span className="text-primary">Slalom Column</span>
                </h1>
                <nav>
                    <ul>

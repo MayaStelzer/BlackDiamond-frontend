@@ -1,4 +1,6 @@
 import {useGlobalContext} from "@/app/context/store";
+import Link from "next/link";
+
 
 export type ArticleProps = {
     id: string;
@@ -10,14 +12,11 @@ const Article = ({ id }: ArticleProps) => {
         return Number(id)==element.id;
 
     }
-    const setPageType = () => {
-        setPageStyle(PageStyleType.CardType);
-    }
     const currentCard=cards.filter(matchesId)[0];
     return (
         <div>
             <div className = "back Button">
-                <button onClick={setPageType}>Back</button>
+                <button> <Link href="/">Back</Link></button>
             </div>
         <article className="article">
                     <img src = {currentCard.imageName} alt=""/>
