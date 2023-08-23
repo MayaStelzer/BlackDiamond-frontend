@@ -10,7 +10,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                 <header className="hero">
                     <div id="navbar" className="navbar">
                         <h1 className="logo">
-                            <span className="text-primary" ><Link href="/"> GnarGuide</Link></span>
+                            <span className="text-primary" ><Link href="/">Slalom Column</Link></span>
                         </h1>
                         <nav>
                             <ul>
@@ -22,10 +22,6 @@ export default function Page({ params }: { params: { slug: string } }) {
                             </ul>
                         </nav>
                     </div>
-                    {/* <div className="content">
-                    <h1>Maya's Awesome Skiing Site</h1>
-                    <span>Maya's Awesome Skiing Site</span>
-                </div> */}
                 </header>
                 <div id="funfact" className="funfact">
                     <h3> <center> Fun Fact: The national ski patrol (NSP) was founded in 1938 by Charles Minot Dole in Stowe, Vermont. A big thank you to all the ski patrollers out there for your service and for keeping our ski-areas safe! </center></h3>
