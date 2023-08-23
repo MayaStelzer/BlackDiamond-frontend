@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - DEVELOP
+      - main
 env:
   DEVOPS_REPO_BRANCH: PROD
   DEVOPS_REPO_PATH: skiResortsFrontEnd
