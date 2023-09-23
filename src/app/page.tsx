@@ -8,10 +8,11 @@ import Card from "../../components/cards";
 export default function Home() {
 
     const { cards, setCards } = useGlobalContext();
-
+    const configUrl = process.env.NEXT_PUBLIC_CONFIG_URL ? process.env.NEXT_PUBLIC_CONFIG_URL : "http://ski-resorts-api.bipper.net";
     useEffect(() => {
         const fetchCards = async () => {
-            const response = await fetch ("http://ski-resorts-api.bipper.net/blogEntries");
+            const url = configUrl + "/blogEntries";
+            const response = await fetch (url)      ;
             const cards = await response.json();
             setCards(cards.blogEntries);
         };
