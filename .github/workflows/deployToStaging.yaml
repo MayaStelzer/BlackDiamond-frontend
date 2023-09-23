@@ -2,7 +2,7 @@
 on:
   push:
     branches:
-      - DEVELOP
+      - STAGING
 env:
   DEVOPS_REPO_DEV_BRANCH: DEVELOP
   DEVOPS_REPO_BRANCH: STAGING
