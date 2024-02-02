@@ -1,6 +1,6 @@
 'use client';
 
-import {createContext, useContext, Dispatch, SetStateAction, useState, ReactNode} from "react";
+import {createContext, useContext, Dispatch, SetStateAction, useState } from "react";
 import {CardType} from "@/model/cardType";
 
 interface ContextProps {
@@ -13,7 +13,7 @@ const GlobalContext = createContext<ContextProps>({
     setCards: (): CardType[] => []
 })
 
-export const GlobalContextProvider = ({ children }: ReactNode) => {
+export const GlobalContextProvider = ({ children }: any ) => {
     const [ cards, setCards ] = useState<CardType[]>([]);
     return (
         <GlobalContext.Provider value={{ cards, setCards }} >
