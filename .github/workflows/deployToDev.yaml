@@ -5,6 +5,7 @@ on:
       - DEVELOP
 env:
   DEVOPS_REPO_BRANCH: DEVELOP
+  CODE_REPO_BRANCH: DEVELOP
   DEVOPS_REPO_PATH: skiResortsFrontEnd
   DEVOPS_REPO_NAME: peterstelzer/bipper-kubernetes
   VALUES_FILENAME: values-dev.yaml
@@ -16,7 +17,7 @@ jobs:
       - name: check out code
         uses: actions/checkout@v2
         with:
-          ref: DEVELOP
+          ref: ${{ env.CODE_REPO_BRANCH }}
       - name: Set repo sha1
         id: set-repo-sha1
         run:  echo "SHA1_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
